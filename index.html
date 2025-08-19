@@ -1,5 +1,274 @@
-<h1>Hello,word! 文档</h1>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>给最爱的 XXX 的满月纪念</title>
+    
+    <style>
+        /* 页面整体风格 */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fdf6f6; /* 温馨的背景色 */
+            color: #5c5470;
+            overflow-x: hidden;
+        }
 
-<h2>xingtailzh.github.io</h2
+        /* 容器通用样式 */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+        }
 
-<h3>怎么回事</h3> 
+        /* 开篇大图区域 */
+        .hero {
+            /* TODO: 在这里修改你的主图照片链接 */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://i.imgur.com/example.jpg');
+            height: 100vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        .hero h1 {
+            font-size: 4rem;
+            margin: 0;
+            font-family: 'Georgia', serif;
+            font-weight: 300;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .hero p {
+            font-size: 1.5rem;
+            margin-top: 10px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        /* 章节标题 */
+        h2.section-title {
+            font-size: 2.5rem;
+            color: #352f44;
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+        }
+        h2.section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: #dbb4b4;
+            margin: 10px auto 0;
+        }
+        
+        /* 时光信笺部分 */
+        .letter p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            text-align: left;
+            white-space: pre-wrap; /* 保留换行和空格 */
+        }
+        
+        /* 甜蜜瞬间时间线 */
+        .timeline {
+            position: relative;
+            list-style: none;
+            padding: 20px 0;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 3px;
+            background-color: #dbb4b4;
+            margin-left: -1.5px;
+        }
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            text-align: left;
+        }
+        .timeline-item .content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            display: inline-block;
+            text-align: left;
+        }
+        .timeline-item .content h3 {
+            margin-top: 0;
+            color: #352f44;
+        }
+        .timeline-item .content img {
+            max-width: 100%;
+            border-radius: 6px;
+            margin-top: 10px;
+        }
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border: 4px solid #dbb4b4;
+            border-radius: 50%;
+            top: 24px;
+            z-index: 1;
+        }
+        .timeline-item:nth-child(odd)::after {
+            right: -10px;
+        }
+        .timeline-item:nth-child(even)::after {
+            left: -10px;
+        }
+
+        /* 心动理由部分 */
+        .reasons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .reason-card {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            width: 250px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .reason-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+        .reason-card .icon {
+            font-size: 2.5rem;
+            color: #dbb4b4;
+        }
+        .reason-card p {
+            font-size: 1rem;
+        }
+        
+        /* 音乐部分 */
+        .music iframe {
+            border-radius: 12px;
+            border: none;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+
+        /* 页脚 */
+        footer {
+            padding: 20px;
+            background-color: #352f44;
+            color: #fdf6f6;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <h1>Dear, XXX</h1>
+        <p>我们故事的第一个月</p>
+    </header>
+
+    <main>
+        <section class="container letter">
+            <h2 class="section-title">一封信</h2>
+            <p>
+亲爱的XXX,
+
+时间过得真快，感觉像昨天才刚刚认识，转眼我们就在一起一个月了。
+
+这三十天，每一天都充满了新鲜和甜蜜。我还记得我们第一次约会时你的笑，记得……
+
+（在这里写下你的真情实感）
+
+期待我们未来的每一个月。
+            </p>
+        </section>
+
+        <section class="container">
+            <h2 class="section-title">甜蜜瞬间</h2>
+            <ul class="timeline">
+                
+                <li class="timeline-item">
+                    <div class="content">
+                        <h3>2025年7月18日</h3>
+                        <p>我们第一次约会的地方，你笑得好甜。</p>
+                        <img src="https://i.imgur.com/example1.jpg" alt="第一次约会">
+                    </div>
+                </li>
+                <li class="timeline-item">
+                    <div class="content">
+                        <h3>2025年7月25日</h3>
+                        <p>一起去看了那场期待已久的电影。</p>
+                        <img src="https://i.imgur.com/example2.jpg" alt="看电影">
+                    </div>
+                </li>
+                
+                <li class="timeline-item">
+                    <div class="content">
+                        <h3>2025年8月10日</h3>
+                        <p>第一次为你做饭，虽然有点手忙脚乱，但你都吃光了！</p>
+                        <img src="https://i.imgur.com/example3.jpg" alt="做饭">
+                    </div>
+                </li>
+
+                </ul>
+        </section>
+        
+        <section class="container">
+            <h2 class="section-title">心动理由</h2>
+            <div class="reasons">
+                <div class="reason-card">
+                    <div class="icon">❤️</div>
+                    <p>你总是能get到我的笑点。</p>
+                </div>
+                <div class="reason-card">
+                    <div class="icon">✨</div>
+                    <p>你认真工作时的样子特别迷人。</p>
+                </div>
+                <div class="reason-card">
+                    <div class="icon">😊</div>
+                    <p>你的善良和温柔。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container music">
+            <h2 class="section-title">我们的歌</h2>
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/3TGRqZ0a2l1LRblBkJoaDx?utm_source=generator" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>To be continued... 我们的故事，未完待续 ❤️</p>
+            <p>Made with Love by [你的名字] - 2025.08.18</p>
+        </div>
+    </footer>
+
+</body>
+</html>
